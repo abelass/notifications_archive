@@ -1,0 +1,8 @@
+#FORMULAIRE_RECHERCHE_ECRIRE{#SELF,ajax}
+<div class="nettoyeur"></div>
+
+<INCLURE{fond=prive/objets/liste/notifications, par=sujet, env, ajax, sinon=<:notification:info_aucun_notification:>}>
+
+[(#AUTORISER{creer,notification})
+	[(#URL_ECRIRE{notification_edit,new=oui}|icone_verticale{<:notification:icone_creer_notification:>,notification,new,right})]
+]

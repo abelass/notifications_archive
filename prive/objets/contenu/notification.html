@@ -1,0 +1,33 @@
+<BOUCLE_notification(NOTIFICATIONS){id_notification}>
+
+[<div class="champ contenu_sujet[ (#SUJET*|strlen|?{'',vide})]">
+	<label><:notification:label_sujet:> : </label>
+	<span dir='#LANG_DIR' class='#EDIT{sujet} sujet'>(#SUJET)</span>
+</div>]
+
+[<div class="champ contenu_texte[ (#TEXTE*|strlen|?{'',vide})]">
+	<label><:notification:label_texte:> : </label>
+	<span dir='#LANG_DIR' class='#EDIT{texte} texte'>(#TEXTE)</span>
+</div>]
+
+[<div class="champ contenu_type[ (#TYPE*|strlen|?{'',vide})]">
+	<label><:notification:label_type:> : </label>
+	<span dir='#LANG_DIR' class='#EDIT{type} type'>(#TYPE)</span>
+</div>]
+
+[<div class="champ contenu_recipients[ (#RECIPIENTS*|strlen|?{'',vide})]">
+	<label><:notification:label_recipients:> : </label>
+	<span dir='#LANG_DIR' class='#EDIT{recipients} recipients'>(#RECIPIENTS)</span>
+</div>]
+
+[<div class="champ contenu_id_objet[ (#ID_OBJET*|strlen|?{'',vide})]">
+	<label><:notification:label_id_objet:> : </label>
+	<span dir='#LANG_DIR' class='#EDIT{id_objet} id_objet'>(#ID_OBJET)</span>
+</div>]
+
+[<div class="champ contenu_objet[ (#OBJET*|strlen|?{'',vide})]">
+	<label><:notification:label_objet:> : </label>
+	<span dir='#LANG_DIR' class='#EDIT{objet} objet'>(#OBJET)</span>
+</div>]
+
+</BOUCLE_notification>

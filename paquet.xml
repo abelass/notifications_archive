@@ -1,0 +1,51 @@
+<paquet
+	prefix="notifications_archive"
+	categorie="communication"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[3.0.13;3.0.*]"
+	logo="prive/themes/spip/images/notifications_archive-64.png"
+	documentation=""
+	schema="1.0.0" 
+>
+	<!--
+		Paquet genere le 2014-01-10 17:36:02
+		(Vous pouvez bien entendu supprimer ces commentaires) 
+	-->
+
+	<nom>Archive notifications</nom>
+
+	<!-- cette balise peut etre presente plusieurs fois s'il y a plusieurs auteurs --> 
+	<auteur>Rainer</auteur>
+
+	<licence>GNU/GPL</licence>
+
+	<!--
+		Exemple de commandes
+		* dependances
+		<necessite nom="saisies" compatibilite="[1.21.0;]" />
+		<utilise nom="saisies" compatibilite="[1.21.0;]" />
+		<lib nom="simplehtmldom" lien="http://chemin_vers_archive.zip" />
+		* pipelines
+		<pipeline nom="autoriser" inclure="notifications_archive_autorisations.php" />
+		<pipeline nom="insert_head" inclure="notifications_archive_pipelines.php" />
+		* declarer un pipeline 
+		<pipeline nom="mon_pipeline" action="" />
+		* parents de menus de SPIP :
+				menu_accueil (A eviter), menu_edition, menu_publication,
+				menu_activite, menu_squelette, menu_administration, menu_configuration 
+		<menu nom="notifications_archive" titre="notifications_archive:notifications_archive_titre" parent="menu_edition"  icone="images/notifications_archive-16.png" />
+		* parents d'onglets... configuration, plugins, statistiques, ... 
+		<onglet nom="notifications_archive" titre="notifications_archive:notifications_archive_titre" parent="configuration" icone="images/notifications_archive-24.png" />
+	-->
+
+	<necessite nom="saisies"  compatibilite="[1.24.0;]" /> 
+
+
+	<pipeline nom="autoriser" inclure="notifications_archive_autorisations.php" /> 
+
+	<pipeline nom="declarer_tables_objets_sql" inclure="base/notifications_archive.php" /> 
+	<pipeline nom="declarer_tables_interfaces" inclure="base/notifications_archive.php" /> 
+
+	<menu nom="notifications" titre="notification:titre_notifications" parent="menu_edition" icone="images/notification-16.png" action="notifications" /> 
+</paquet>
