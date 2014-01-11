@@ -61,7 +61,7 @@ function notifications_archive_declarer_tables_objets_sql($tables) {
 		),
 		'titre' => "sujet AS titre, '' AS lang",
 		'date' => "date",
-		'champs_editables'  => array(),
+		'champs_editables'  => array('sujet','texte','type','recipients','id_objet','objet','envoi'),
 		'champs_versionnes' => array(),
 		'rechercher_champs' => array("sujet" => 8, "texte" => 6),
 		'tables_jointures'  => array(),
