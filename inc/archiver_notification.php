@@ -21,13 +21,10 @@ function inc_archiver_notification_dist($email, $subject, $o){
         foreach($o AS $champ=>$valeur){
             set_request($champ,$valeur);
         }
-    
+  
         formulaires_editer_objet_traiter('notification','new');
-
     }
-    
-
-
+   
 }
 
 ?>
