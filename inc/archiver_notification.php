@@ -12,7 +12,7 @@
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
 function inc_archiver_notification_dist($email, $subject, $o){
-    set_request('email',$email);
+    set_request('recipents',$email);
     set_request('sujet',$subject); 
     foreach($o AS $champ=>$valeur){
         set_request($champ,$valeur);
