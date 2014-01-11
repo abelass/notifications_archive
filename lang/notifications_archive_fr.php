@@ -12,6 +12,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'cfg_exemple' => 'Exemple',
 	'cfg_exemple_explication' => 'Explication de cet exemple',
 	'cfg_titre_parametrages' => 'Paramétrages',
+	
+    //L
+    
+    'label_activer'=>'Activer l\'archivage pour la notification @notification@',
 
 	// T
 	'titre_page_configurer_notifications_archive' => 'Paramêtres Plugin Archive Notifications',
