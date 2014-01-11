@@ -40,7 +40,7 @@ function notifications_archive_declarer_tables_interfaces($interfaces) {
  */
 function notifications_archive_declarer_tables_objets_sql($tables) {
 
-	$tables['notifications'] = array(
+	$tables['spip_notifications'] = array(
 		'type' => 'notification',
 		'principale' => "oui",
 		'field'=> array(
@@ -51,16 +51,18 @@ function notifications_archive_declarer_tables_objets_sql($tables) {
 			"recipients"         => "text NOT NULL DEFAULT ''",
 			"id_objet"           => "int(11) NOT NULL DEFAULT 0",
 			"objet"              => "varchar(50) NOT NULL DEFAULT ''",
+			"envoi"              => "varchar(50) NOT NULL DEFAULT ''",			
 			"date"               => "datetime NOT NULL DEFAULT '0000-00-00 00:00:00'", 
 			"maj"                => "TIMESTAMP"
 		),
 		'key' => array(
 			"PRIMARY KEY"        => "id_notification",
+            "KEY id_objet"        => "id_objet,objet",		          		
 		),
 		'titre' => "sujet AS titre, '' AS lang",
 		'date' => "date",
-		'champs_editables'  => array('objet'),
-		'champs_versionnes' => array('objet'),
+		'champs_editables'  => array(),
+		'champs_versionnes' => array(),
 		'rechercher_champs' => array("sujet" => 8, "texte" => 6),
 		'tables_jointures'  => array(),
 		

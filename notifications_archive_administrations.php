@@ -49,7 +49,7 @@ function notifications_archive_upgrade($nom_meta_base_version, $version_cible) {
 	# );
 	# ...
 
-	$maj['create'] = array(array('maj_tables', array('notifications')));
+	$maj['create'] = array(array('maj_tables', array('spip_notifications')));
 
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
@@ -74,7 +74,7 @@ function notifications_archive_vider_tables($nom_meta_base_version) {
 	# sql_drop_table("spip_xx");
 	# sql_drop_table("spip_xx_liens");
 
-	sql_drop_table("notifications");
+	sql_drop_table("spip_notifications");
 
 	# Nettoyer les versionnages et forums
 	sql_delete("spip_versions",              sql_in("objet", array('notification')));
