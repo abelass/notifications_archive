@@ -30,26 +30,14 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 **/
 function notifications_archive_upgrade($nom_meta_base_version, $version_cible) {
 	$maj = array();
-	# quelques exemples
-	# (que vous pouvez supprimer !)
-	# 
-	# $maj['create'] = array(array('creer_base'));
-	#
-	# include_spip('inc/config')
-	# $maj['create'] = array(
-	#	array('maj_tables', array('spip_xx', 'spip_xx_liens')),
-	#	array('ecrire_config', array('notifications_archive', array('exemple' => "Texte de l'exemple")))
-	#);
-	#
-	# $maj['1.1.0']  = array(array('sql_alter','TABLE spip_xx RENAME TO spip_yy'));
-	# $maj['1.2.0']  = array(array('sql_alter','TABLE spip_xx DROP COLUMN id_auteur'));
-	# $maj['1.3.0']  = array(
-	#	array('sql_alter','TABLE spip_xx CHANGE numero numero int(11) default 0 NOT NULL'),
-	#	array('sql_alter','TABLE spip_xx CHANGE texte petit_texte mediumtext NOT NULL default \'\''),
-	# );
-	# ...
+    $notifications=charger_fonction('notifications_archiver','inc',true);
+    $notifications=$notifications();
+    
 
-	$maj['create'] = array(array('maj_tables', array('spip_notifications')));
+	$maj['create'] = array(
+	   array('maj_tables', array('spip_notifications')),
+        array('ecrire_config', 'notifications_archive', array('notifications' => $notifications))    
+       );
 
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
