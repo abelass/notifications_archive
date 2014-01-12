@@ -7,7 +7,8 @@
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
 function formulaires_configurer_notifications_archive_saisies_dist(){
-
+    include_spip('inc/config');
+    $config=lire_config('notifications_archive');
     $notifications=charger_fonction('notifications_archiver','inc',true);
     $notifications=$notifications();
    
@@ -17,11 +18,11 @@ function formulaires_configurer_notifications_archive_saisies_dist(){
     foreach($notifications AS $notification=>$options){
         $n++;
         $saisies[$n]=array(       
-                'saisie'=>'checkbox',
+                'saisie'=>'oui_non',
                 'options'=>array(
                     'nom' => $notification.'[activer]',
                     'datas'=>array('oui'=>'oui'),
-                    'defaut'=>$options['activer'],
+                    'defaut'=>$config[$notification]['activer'],
                     'label' => _T('notifications_archive:label_activer',array('notification'=>$notification))                                  
                      ),
                  );  
@@ -30,7 +31,7 @@ function formulaires_configurer_notifications_archive_saisies_dist(){
                   'saisie'=>'input',
                    'options'=>array(
                         'nom' => $notification.'[duree]',
-                        'defaut'=>$options['duree'],
+                        'defaut'=>$config[$notification]['duree'],
                         'label' => _T('notifications_archive:label duree'),                             
                          ),               
             );       

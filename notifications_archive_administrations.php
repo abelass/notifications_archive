@@ -36,7 +36,7 @@ function notifications_archive_upgrade($nom_meta_base_version, $version_cible) {
 
 	$maj['create'] = array(
 	   array('maj_tables', array('spip_notifications')),
-        array('ecrire_config', 'notifications_archive', array('notifications' => $notifications))    
+        array('ecrire_config', 'notifications_archive', $notifications)    
        );
 
 	include_spip('base/upgrade');

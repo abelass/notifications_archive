@@ -15,7 +15,7 @@ function inc_archiver_notification_dist($o){
     include_spip('inc/config');
     $config=lire_config('notifications_archive');
     
-    if(isset($config['notifications'][$o['type']]['activer'])){
+    if(isset($config[$o['type']]['activer']) AND $config[$o['type']]['activer']=='on'){
         foreach($o AS $champ=>$valeur){
             set_request($champ,$valeur);
         }
