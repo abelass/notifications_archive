@@ -18,7 +18,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'info_notifications_auteur' => 'Les notifications de cet auteur',
 
 	// L
+	'label_envoi' => 'Envoi :',
 	'label_id_notification' => 'Id Objet',
+	'label_lie_a' => 'Lié à :',
 	'label_notification' => 'Objet',
 	'label_recipients' => 'Récipients',
 	'label_sujet' => 'Sujet',
