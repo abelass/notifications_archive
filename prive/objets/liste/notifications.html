@@ -1,6 +1,6 @@
 [(#SET{defaut_tri,#ARRAY{
-	sujet,1, 
 	date,-1, 
+	sujet,1, 
 	type,-1,
 	recipients,-1,	
 	id_notification,1,
@@ -22,7 +22,7 @@
 		</tr>
 	</thead>
 	<tbody>
-	<BOUCLE_liste_notifications(NOTIFICATIONS){id_objet?}{id_mot?}{id_auteur?}{where?}{recherche?}{tri #ENV{par,num sujet},#GET{defaut_tri}}{par sujet}{pagination #ENV{nb,10}}>
+	<BOUCLE_liste_notifications(NOTIFICATIONS){id_objet?}{id_mot?}{id_auteur?}{where?}{recherche?}{tri #ENV{par,num sujet},#GET{defaut_tri}}{par date}{pagination #ENV{nb,10}}>
 		<tr class='[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]'>
 			<td class='picto'>[(#CHEMIN_IMAGE{notification-16.png}|balise_img)]</td>
 			<td class='sujet principale'>[(#LOGO_NOTIFICATION|image_reduire{20,26})]<a href="[(#ID_NOTIFICATION|generer_url_entite{notification})]" title="<:info_numero_abbreviation|attribut_html:> #ID_NOTIFICATION">[(#RANG). ]#SUJET</a></td>
