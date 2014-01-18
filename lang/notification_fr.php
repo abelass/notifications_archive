@@ -37,7 +37,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'texte_creer_associer_notification' => 'Créer et associer une notifications',
 	'titre_langue_notification' => 'Langue de cette notifications',
 	'titre_logo_notification' => 'Logo de cette notifications',
-	'titre_notification' => 'Notifications',
+	'titre_notification' => 'Notification',
 	'titre_notifications' => 'Notifications',
 	'titre_notifications_rubrique' => 'Notifications de la rubrique',
 );
