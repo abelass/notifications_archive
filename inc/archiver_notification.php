@@ -13,7 +13,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 
 function inc_archiver_notification_dist($o){
     include_spip('inc/config');
-    $config=lire_config('notifications_archive');
+    $config=lire_config('notifications_archive',array());
     if(isset($config[$o['type']]['activer']) AND $config[$o['type']]['activer']=='on'){
         foreach($o AS $champ=>$valeur){
             if(is_array($valeur))$valeur=implode(',',$valeur);

@@ -12,12 +12,10 @@
 if (!defined('_ECRIRE_INC_VERSION')) return;
 	
 
-/*
- * Un fichier de pipelines permet de regrouper
- * les fonctions de branchement de votre plugin
- * sur des pipelines existants.
- */
-
+function notifications_archive_taches_generales_cron($taches){
+    $taches['eliminer_notification'] = 24*3600; // tous les jours
+    return $taches;
+}
 
 
 
