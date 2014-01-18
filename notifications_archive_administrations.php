@@ -70,6 +70,7 @@ function notifications_archive_vider_tables($nom_meta_base_version) {
 	sql_delete("spip_forum",                 sql_in("objet", array('notification')));
 
 	effacer_meta($nom_meta_base_version);
+    effacer_meta('notifications_archive');    
 }
 
 ?>
