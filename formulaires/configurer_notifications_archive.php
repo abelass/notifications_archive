@@ -14,39 +14,38 @@ function formulaires_configurer_notifications_archive_saisies_dist(){
    
 
     $saisies=array();
-    $n=0;
     foreach($notifications AS $notification=>$options){
-        $n++;
-        $saisies[$n]=array(       
-                'saisie'=>'oui_non',
-                'options'=>array(
-                    'nom' => $notification.'[activer]',
-                    'datas'=>array('oui'=>'oui'),
-                    'defaut'=>$config[$notification]['activer'],
-                    'label' => _T('notifications_archive:label_activer',array('notification'=>$notification))                                  
-                     ),
-                 );  
-         $n++;              
-         $saisies[$n]=array(                      
-                  'saisie'=>'input',
-                   'options'=>array(
-                        'nom' => $notification.'[duree]',
-                        'defaut'=>$config[$notification]['duree'],
-                        'label' => _T('notifications_archive:label duree'),                             
-                         ),               
-            );       
-    }
+    	$saisies[]=array(
+    			'saisie' => 'fieldset',
+    			'options' => array(
+    					'nom' => 'fieldset_'.$notification,
+    					'label' => _T('notifications_archive:fieldset_notification',array('notification'=>$notification))
+    					),
+    			'saisies' => array(
+    					array(
+    						'saisie'=>'oui_non',
+			                'options'=>array(
+			                    'nom' => $notification.'[activer]',
+			                    'datas'=>array('oui'=>'oui'),
+			                    'defaut'=>$config[$notification]['activer'],
+			                    'label' => _T('notifications_archive:label_activer',array('notification'=>$notification))                                  
+			                     )
+    						),   							
+	    				array(
+	    						'saisie'=>'input',
+	    						'options'=>array(
+	    								'nom' => $notification.'[duree]',
+	    								'defaut'=>$config[$notification]['duree'],
+	    								'label' => _T('notifications_archive:label_duree'),
+	    								'explication' => _T('notifications_archive:explication_duree'),
+	    						),	    						
+	    					
+    						)
+                		)    				
+    				);   
+    	}
     
-	return array(
-		array(
-			'saisie' => 'fieldset',
-			'options' => array(
-				'nom' => 'fieldset_parametres',
-				'label' => _T('reservation_evenement:cfg_titre_parametrages')
-			),
-            'saisies' => $saisies 
-         )       		
-	);
+	return $saisies;
 }
 
 ?>
