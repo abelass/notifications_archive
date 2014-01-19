@@ -11,7 +11,7 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
     
-//Eliminer les notification aprês l)interval définit dans config
+//Eliminer les notification après l'interval définit dans config
 function genie_eliminer_notifications_dist ($t) {
  
     include_spip('inc/config');
