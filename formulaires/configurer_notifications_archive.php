@@ -38,6 +38,7 @@ function formulaires_configurer_notifications_archive_saisies_dist(){
 	    								'defaut'=>$config[$notification]['duree'],
 	    								'label' => _T('notifications_archive:label_duree'),
 	    								'explication' => _T('notifications_archive:explication_duree'),
+	    								'afficher_si' => '@'.$notification.'[activer]@ == "on"'
 	    						),	    						
 	    					
     						)

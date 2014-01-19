@@ -9,7 +9,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'explication_duree'=>'Pour ne jamais les éliminer, laissez ce champs vide.',
 
 	//F
-	'fieldset_notification'=>'Paramêtres pour @notification@',
+	'fieldset_notification'=>'Paramêtres pour la notification "@notification@"',
 	
     //L
     
