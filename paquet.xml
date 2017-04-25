@@ -1,9 +1,9 @@
 <paquet
 	prefix="notifications_archive"
 	categorie="communication"
-	version="1.1.0"
-	etat="dev"
-	compatibilite="[3.0.13;3.0.*]"
+	version="1.1.5"
+	etat="test"
+	compatibilite="[3.0.13;3.1.*]"
 	logo="prive/themes/spip/images/notifications_archive-64.png"
 	documentation=""
 	schema="1.0.0" 
@@ -17,7 +17,7 @@
 
 	<licence>GNU/GPL</licence>
 
-	<necessite nom="saisies"  compatibilite="[1.24.0;]" /> 
+	<necessite nom="saisies"  compatibilite="[2.0.3;]" /> 
 
 	<pipeline nom="autoriser" inclure="notifications_archive_autorisations.php" /> 
 
@@ -26,5 +26,5 @@
 	
 	<pipeline nom="taches_generales_cron" inclure="notifications_archive_pipelines.php" /> 	
 
-	<menu nom="notifications" titre="notification:titre_notifications" parent="menu_activite" icone="images/notification-16.png" action="notifications" /> 
+	<menu nom="notifications" titre="notifications_archive:titre_notifications" parent="menu_activite" icone="images/notification-16.png" action="notifications" /> 
 </paquet>
