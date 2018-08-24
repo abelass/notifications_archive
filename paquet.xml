@@ -19,6 +19,10 @@
 
 	<necessite nom="saisies"  compatibilite="[2.18.13;]" />
 
+		<!-- Déclaration de pipelines -->
+	<pipeline nom="notifications_archive" action='' />
+
+	<!-- Appelle les pipelines -->
 	<pipeline nom="autoriser" inclure="notifications_archive_autorisations.php" />
 
 	<pipeline nom="declarer_tables_objets_sql" inclure="base/notifications_archive.php" />
