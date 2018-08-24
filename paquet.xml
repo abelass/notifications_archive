@@ -19,7 +19,7 @@
 
 	<necessite nom="saisies"  compatibilite="[2.18.13;]" />
 
-		<!-- Déclaration de pipelines -->
+	<!-- Déclaration de pipelines -->
 	<pipeline nom="notifications_archive" action='' />
 
 	<!-- Appelle les pipelines -->
